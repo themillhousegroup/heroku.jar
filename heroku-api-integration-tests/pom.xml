@@ -113,7 +113,7 @@
     </dependencies>
     <properties>
         <guava.version>11.0.1</guava.version>
-        <heroku-api-integration-tests.skipTests>true</heroku-api-integration-tests.skipTests>
+        <heroku-api-integration-tests.skipTests>false</heroku-api-integration-tests.skipTests>
     </properties>
 
     <profiles>
@@ -141,12 +141,13 @@
                     <failIfNoTests>true</failIfNoTests>
                     <threadCount>25</threadCount>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng-finagle.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/testng-asynchttpclient.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/testng-httpclient-jackson.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/testng-httpclient-gson.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/testng-play.xml</suiteXmlFile>
-                        <suiteXmlFile>src/test/resources/testng-jersey-client.xml</suiteXmlFile>
+                    <!--    <suiteXmlFile>src/test/resources/testng-finagle.xml</suiteXmlFile>          -->
+                    <!--    <suiteXmlFile>src/test/resources/testng-asynchttpclient.xml</suiteXmlFile>          -->
+                    <!--    <suiteXmlFile>src/test/resources/testng-httpclient-jackson.xml</suiteXmlFile>       -->   
+                        <suiteXmlFile>src/test/resources/testng-jackson-only.xml</suiteXmlFile>          
+                    <!--    <suiteXmlFile>src/test/resources/testng-httpclient-gson.xml</suiteXmlFile>          -->
+                    <!--    <suiteXmlFile>src/test/resources/testng-play.xml</suiteXmlFile>          -->
+                    <!--    <suiteXmlFile>src/test/resources/testng-jersey-client.xml</suiteXmlFile>          -->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

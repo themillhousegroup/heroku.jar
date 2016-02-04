@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="httpclient-jackson" verbose="1" thread-count="10" parallel="false" data-provider-thread-count="10">
+    <test name="jackson-only">
+        <packages>
+            <package name="com.heroku.api"/>
+        </packages>
+    </test>
+</suite>
