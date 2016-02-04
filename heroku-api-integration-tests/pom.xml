@@ -125,7 +125,7 @@
                 </property>
             </activation>
             <properties>
-                <heroku-api-integration-tests.skipTests>false</heroku-api-integration-tests.skipTests>
+                <heroku-api-integration-tests.skipTests>true</heroku-api-integration-tests.skipTests>
             </properties>
         </profile>
     </profiles>
