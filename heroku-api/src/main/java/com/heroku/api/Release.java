@@ -17,7 +17,7 @@ public class Release implements Serializable {
     String created_at;
     Map<String, String> env;
     List<String> addons;
-    Map<String, String> pstable;
+    Map<String, Object> pstable;
 
 		public String toString() { 
 			return name + " " + descr + " " + user + " " + commit + " " + created_at;
@@ -106,11 +106,11 @@ public class Release implements Serializable {
         this.addons = addons;
     }
 
-    public Map<String, String> getPSTable() {
+    public Map<String, Object> getPSTable() {
         return pstable;
     }
 
-    private void setPstable(Map<String, String> pstable) {
+    private void setPstable(Map<String, Object> pstable) {
         this.pstable = pstable;
     }
 }

@@ -62,7 +62,7 @@ public class ListReleasesTest {
         assertEquals(testInstance.getResponse(realJson.getBytes(), Http.Status.OK.statusCode), expected);
     }
 
-    //@Test
+    @Test
     public void parsingActual2015JSONArrayShouldNotCauseParseException() {
 			String realJson = "[" + 
 "{\"addons\":[\"heroku-postgresql:hobby-dev\"],\"commit\":\"245d556\",\"created_at\":\"2016/02/01 19:47:06 -0800\",\"descr\":\"Deploy 245d556\",\"env\":{\"JAVA_OPTS\":\"-Xss512k\",\"DATABASE_URL\":\"postgres://foo:bar@ec2\"},\"name\":\"v10\",\"pstable\":{\"web\":{\"command\":\"runme.sh -Dhttp.port=$PORT -Dconfig.resource=$HEROKU_ENV.conf\",\"slug\":{\"id\":\"0596d1f0-0c3e-4548-96d9-8f41cd95596a\"}}},\"user\":\"user@gmail.com\"}," +
@@ -71,9 +71,9 @@ public class ListReleasesTest {
 "]";
 
 				List<Release> expected = Lists.newArrayList(
-					new Release(),
-					new Release(),
-					new Release()	
+					buildRelease("v10", "2016/02/01 19:47:06 -0800", "Deploy 245d556"),
+					buildRelease("v11", "2016/02/02 04:19:24 -0800", "Deploy b6e509e"),
+					buildRelease("v12", "2016/02/02 15:07:50 -0800", "Set EXTRA_INFO, BUILD_ID, HEROKU_ENV, BUILD_NUMBER, GIT_COMMIT config vars")
 				);
         assertEquals(testInstance.getResponse(realJson.getBytes(), Http.Status.OK.statusCode), expected);
     }
