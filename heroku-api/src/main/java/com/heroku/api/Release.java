@@ -19,6 +19,37 @@ public class Release implements Serializable {
     List<String> addons;
     Map<String, String> pstable;
 
+		public String toString() { 
+			return name + " " + descr + " " + user + " " + commit + " " + created_at;
+		}
+
+		public boolean equals(Object o) {
+			if (o instanceof Release) {
+				Release r = (Release) o;
+				return 	this.name.equals(r.name) && 
+								this.user.equals(r.user) && 
+								this.descr.equals(r.descr) && 
+								this.created_at.equals(r.created_at);
+			}
+			return false;
+		}
+
+		private int hashOrOne(String field) {
+			if (field == null) {
+				return 1; 
+			} else {
+				return field.hashCode();
+			}
+		}
+
+		public int hashCode() {
+				return 	31 * hashOrOne(name) *
+								hashOrOne(user) * 
+								hashOrOne(descr) * 
+							  hashOrOne(created_at);
+			
+		}
+
     public String getName() {
         return name;
     }
